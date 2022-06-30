@@ -6,12 +6,20 @@
 function App() {
    
   function convertToSeconds(){
+    let distanceDifferance;
+    let newNos;
     let cd = document.getElementById('currentDistance').value;
     let nd = document.getElementById('newDistance').value;
     let nos = document.getElementById('numberOfSweeps').value;
     let ss = document.getElementById('sweepSeconds').value; 
-    let distanceDifferance = cd/nd;
-    let newNos = nos/distanceDifferance;
+    if (nd>cd) {
+      distanceDifferance = nd/cd;
+      newNos = nos*distanceDifferance;
+
+    } else {
+      distanceDifferance = cd/nd;
+      newNos = nos/distanceDifferance;
+    }
     let timeSeconds = newNos * ss;
     let finalTimeSeconds = Math.round(timeSeconds);
  
