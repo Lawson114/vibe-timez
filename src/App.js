@@ -54,7 +54,7 @@ return (
               <label>Sweep Seconds </label>
               <input type="number" id="sweepSeconds"/><br/><br/>
               <button className="btn" type='submit' onClick={()=>convertToSeconds()}>Click me</button><br/><br/>  
-              <div id='myText'></div>
+              <h2 id='myText'></h2>
               
             
   </div>
