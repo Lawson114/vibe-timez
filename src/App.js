@@ -45,13 +45,13 @@ function App() {
 return (
   <div className="App, container">
               <div></div><br/><br/>
-              <label>Current Distance </label>
+              <label className="flow-text">Current Distance </label>
               <input type="number" id="currentDistance"/><br/><br/>
-              <label>New Distance </label>
+              <label className="flow-text">New Distance </label>
               <input type="number" id="newDistance"/><br/><br/>
-              <label>Number Of Sweeps </label>
+              <label className="flow-text">Number Of Sweeps </label>
               <input type="number" id="numberOfSweeps"/><br/><br/>
-              <label>Sweep Seconds </label>
+              <label className="flow-text">Sweep Seconds </label>
               <input type="number" id="sweepSeconds"/><br/><br/>
               <button className="btn" type='submit' onClick={()=>convertToSeconds()}>Click me</button><br/><br/>  
               <h2 id='myText'></h2>
