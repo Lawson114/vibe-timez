@@ -1,8 +1,4 @@
 
-
-
-
-
 function App() {
    
   function convertToSeconds(){
@@ -10,8 +6,17 @@ function App() {
     let newNos;
     let cd = document.getElementById('currentDistance').value;
     let nd = document.getElementById('newDistance').value;
+
+
     let nos = document.getElementById('numberOfSweeps').value;
     let ss = document.getElementById('sweepSeconds').value; 
+
+    document.getElementById("nnewDistance").innerHTML = 'New values for: '+ nd+"Km";
+
+
+    
+
+
     if (nd>cd) {
       distanceDifferance = nd/cd;
       newNos = nos*distanceDifferance;
@@ -20,8 +25,18 @@ function App() {
       distanceDifferance = cd/nd;
       newNos = nos/distanceDifferance;
     }
+     var nnos = Math.round(newNos);
+    document.getElementById("newSweeps").innerHTML = 'Number of Sweeps: '+ nnos;
+
     let timeSeconds = newNos * ss;
     let finalTimeSeconds = Math.round(timeSeconds);
+
+    let nttps = timeSeconds/nnos;
+
+
+    document.getElementById("TPSS").innerHTML = 'Time per sweep, seconds: '+ Math.round(nttps);
+
+
  
     function convertHMS(){
         let hours   = Math.floor(finalTimeSeconds / 3600);
@@ -30,7 +45,7 @@ function App() {
         if (hours   < 10) {hours   = "0"+hours;};
         if (minutes < 10) {minutes = "0"+minutes;};
         if (seconds < 10) {seconds = "0"+seconds;};
-        document.getElementById("myText").innerHTML = hours+':'+minutes+':'+seconds;
+        document.getElementById("totalTime").innerHTML = 'Total time '+hours+':'+minutes+':'+seconds;
 
      
         
@@ -51,10 +66,16 @@ return (
               <input type="number" id="newDistance"/><br/><br/>
               <label className="flow-text">Number Of Sweeps </label>
               <input type="number" id="numberOfSweeps"/><br/><br/>
-              <label className="flow-text">Sweep Seconds </label>
+              <label className="flow-text">Time Per Sweep, Seconds </label>
               <input type="number" id="sweepSeconds"/><br/><br/>
               <button className="btn" type='submit' onClick={()=>convertToSeconds()}>Click me</button><br/><br/>  
-              <h2 id='myText'></h2>
+              <form>
+                <br/>
+                <label id="nnewDistance" className="flow-text"></label> <br/>
+                <label id="newSweeps" className="flow-text"></label> <br/>
+                <label id="TPSS" className="flow-text"></label><br/>
+                <label id="totalTime" className="flow-text"></label>
+              </form>
               
             
   </div>
