@@ -25,7 +25,7 @@ function App() {
       distanceDifferance = cd/nd;
       newNos = nos/distanceDifferance;
     }
-     var nnos = Math.round(newNos);
+     var nnos = Number(newNos.toFixed(3));
     document.getElementById("newSweeps").innerHTML = 'Number of Sweeps: '+ nnos;
 
     let timeSeconds = newNos * ss;
@@ -34,7 +34,7 @@ function App() {
     let nttps = timeSeconds/nnos;
 
 
-    document.getElementById("TPSS").innerHTML = 'Time per sweep, seconds: '+ Math.round(nttps);
+    document.getElementById("TPSS").innerHTML = 'Time per sweep, seconds: '+ Number(nttps.toFixed(3));
 
 
  
@@ -66,7 +66,7 @@ return (
               <input type="number" id="newDistance"/><br/><br/>
               <label className="flow-text">Number Of Sweeps </label>
               <input type="number" id="numberOfSweeps"/><br/><br/>
-              <label className="flow-text">Time Per Sweep, Seconds </label>
+              <label className="flow-text">Time Per Sweep in Seconds </label>
               <input type="number" id="sweepSeconds"/><br/><br/>
               <button className="btn" type='submit' onClick={()=>convertToSeconds()}>Click me</button><br/><br/>  
               <form>
